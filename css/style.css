@@ -7,7 +7,7 @@ body {
 
 nav, main section div, footer .footer-div {
     margin: 0 auto;
-    max-width: 1100px; /* Максимальная ширина для больших экранов */
+    max-width: 1100px;
 }
 
 :root {
@@ -17,12 +17,19 @@ nav, main section div, footer .footer-div {
 
 header {
     background-color: var(--main-color);
-    color: #fff;
-    padding: 10px 20px;
     text-align: center;
 }
 
+header.scrolled {
+    position: fixed;
+    width: 100%;
+    top: 0px;
+    transition: top 0.2s;
+}
+
 nav {
+    padding: 10px 20px;
+    color: #fff;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -214,6 +221,17 @@ footer hr {
         display: inline;
     }
     .hidden-hr {
+        display: block;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .footer-section ul {
+        display: block;
+        padding: 0px;
+        margin: 0px;
+    }
+    .footer-section ul li {
         display: block;
     }
 }
