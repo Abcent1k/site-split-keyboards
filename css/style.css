@@ -5,13 +5,18 @@ body {
     color: #000000;
 }
 
-nav, main section div, footer div {
+nav, main section div, footer .footer-div {
     margin: 0 auto;
     max-width: 1100px; /* Максимальная ширина для больших экранов */
 }
 
+:root {
+    --main-color: rgb(27, 24, 39);
+    --footer-border: rgb(57, 61, 72);
+}
+
 header {
-    background-color: rgb(27, 24, 39);
+    background-color: var(--main-color);
     color: #fff;
     padding: 10px 20px;
     text-align: center;
@@ -47,7 +52,7 @@ main section {
 }
 
 #first-section {
-    background-color: rgb(27, 24, 39);
+    background-color: var(--main-color);
 }
 
 .content-wrapper {
@@ -93,24 +98,122 @@ h2 {
     height: auto;
 }
 
-@media screen and (max-width: 768px) {
-    .content-wrapper {
-        flex-direction: column;
-    }
-    .text-content, .image-content {
-        flex: 1 1 auto;
-    }
-    .text-content {
-        order: 1;
-    }
-    .image-content {
-        order: 2;
-    }
+footer {
+    background-color: var(--main-color);
+    color: #fff;
 }
 
-footer {
-    background-color: rgb(27, 24, 39);
-    color: #fff;
+.footer-div {
     padding: 10px 20px;
-    text-align: center;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    column-gap: 20px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+.left-footer-section, .right-footer-section {
+    flex: 1 1 200px;
+}
+
+.footer-section h3 {
+    color: #fff;
+}
+
+.footer-section p {
+    color: rgb(141, 151, 181);
+    font-size: 15px;
+    font-weight: 300;
+}
+
+footer hr {
+    background-color: var(--footer-border);
+    height: 1px;
+    border: none;
+}
+
+.footer-section button, .footer-section input{
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 34px;
+    box-shadow: none;
+    border: 1px solid var(--footer-border);
+    border-radius: 5px;
+}
+
+.footer-section button {
+    background-color: var(--main-color);
+    color: #fff;
+    padding-inline: 20px;
+    white-space: nowrap;
+}
+
+.footer-section button:hover {
+    cursor: pointer;
+    background-color: var(--footer-border);
+}
+
+.footer-section input {
+    background-color:#fff;
+    color: #000;
+    padding-inline: 10px;
+    min-width: 100px;
+}
+.footer-section input:focus {
+    outline: 1px solid #fff;
+}
+
+.input-group {
+    display: flex;
+    column-gap: 10px;
+}
+
+.footer-section ul {
+    list-style-type: none;
+    padding: 0px;
+    margin: 0px;
+}
+.footer-section ul li {
+    margin: 10px 0px;
+}
+.footer-section a {
+    font-size: 16px;
+    text-decoration: none;
+    color: #cacaca;
+}
+.footer-section ul:hover {
+    cursor: default;
+}
+.footer-section a:hover {
+    cursor: pointer;
+    text-decoration: underline;
+}
+
+.hidden-hr {
+    display: none;
+}
+
+@media screen and (max-width: 768px) {
+    .content-wrapper, footer {
+        flex-direction: column;
+    }
+    .text-content, .image-content, .left-footer-section, .right-footer-section {
+        flex: 1 1 auto;
+    }
+    .text-content, .left-footer-section {
+        order: 1;
+    }
+    .image-content, .right-footer-section {
+        order: 2;
+    }
+    .footer-section ul {
+        display: flex;
+        column-gap: 20px;
+    }
+    .footer-section ul li {
+        display: inline;
+    }
+    .hidden-hr {
+        display: block;
+    }
 }
