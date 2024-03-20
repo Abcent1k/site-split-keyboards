@@ -53,6 +53,16 @@ nav a:hover {
     cursor: pointer;
 }
 
+.logo {
+    display: flex;
+    column-gap: 10px;
+    align-items: center;
+}
+
+.logo svg {
+    margin-bottom: 10px;
+}
+
 main section {
     padding: 20px;
     padding-top: 0px;
@@ -68,8 +78,7 @@ main section {
     align-items: center;
     justify-content: space-between;
     column-gap: 20px;
-    padding-top: 30px;
-    padding-bottom: 30px;
+    padding: 25px 0px;
 }
 
 .main-text {
@@ -117,7 +126,7 @@ footer {
     justify-content: space-between;
     column-gap: 20px;
     padding-top: 10px;
-    padding-bottom: 10px;
+    padding-bottom: 30px;
 }
 .left-footer-section, .right-footer-section {
     flex: 1 1 200px;
@@ -127,7 +136,7 @@ footer {
     color: #fff;
 }
 
-.footer-section p {
+footer p {
     color: rgb(141, 151, 181);
     font-size: 15px;
     font-weight: 300;
@@ -153,6 +162,24 @@ footer hr {
     color: #fff;
     padding-inline: 20px;
     white-space: nowrap;
+}
+
+.button-list {
+    display: flex;
+    column-gap: 5px;
+    align-items: center;
+}
+
+.footer-section .logo-socMedia {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 30px;
+    height: 30px;
+    padding-inline: 0px;
+    border-radius: 15px;
+    border: none;
+    background-color: rgb(44, 48, 57);
 }
 
 .footer-section button:hover {
@@ -200,9 +227,22 @@ footer hr {
     display: none;
 }
 
+.footer-bottom-text {
+    display: flex;
+    justify-content: center;
+}
+
+.footer-bottom-text p {
+    margin: 0;
+    padding: 10px 0px;
+}
+
 @media screen and (max-width: 768px) {
     .content-wrapper, footer {
         flex-direction: column;
+    }
+    .content-wrapper {
+        padding: 15px 0px;
     }
     .text-content, .image-content, .left-footer-section, .right-footer-section {
         flex: 1 1 auto;

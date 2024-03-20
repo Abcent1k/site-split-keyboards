@@ -1,6 +1,6 @@
 let lastScrollTop = 0;
 let header = document.querySelector('header');
-let headerHeight = header.offsetHeight;
+let headerHeight = 71;
 let firstSection = document.getElementById("first-section");
 
 window.addEventListener('scroll', () => {
