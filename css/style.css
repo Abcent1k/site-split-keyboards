@@ -186,7 +186,7 @@ footer {
     color: #fff;
 }
 
-footer p {
+footer p, span {
     color: rgb(141, 151, 181);
     font-size: 15px;
     font-weight: 300;
@@ -280,11 +280,12 @@ footer hr {
 .footer-bottom-text {
     display: flex;
     justify-content: center;
+    column-gap: 2px;
+    padding: 10px 0px;
 }
 
-.footer-bottom-text p {
+.footer-bottom-text span {
     margin: 0;
-    padding: 10px 0px;
 }
 
 @media screen and (max-width: 768px) {
@@ -340,5 +341,9 @@ footer hr {
     }
     .footer-section ul li {
         display: block;
+    }
+    .footer-bottom-text {
+        flex-direction: column;
+        text-align: center;
     }
 }
