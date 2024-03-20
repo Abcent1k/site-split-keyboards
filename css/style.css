@@ -186,7 +186,7 @@ footer {
     color: #fff;
 }
 
-footer p, span {
+footer p, footer span {
     color: rgb(141, 151, 181);
     font-size: 15px;
     font-weight: 300;
