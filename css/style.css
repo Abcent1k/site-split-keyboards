@@ -18,6 +18,7 @@ nav, main section div, footer .footer-div {
 header {
     background-color: var(--main-color);
     text-align: center;
+    z-index: 4;
 }
 
 header.scrolled {
@@ -286,7 +287,7 @@ footer hr {
         display: none;
     }
 
-    #logo-nav {
+    .logo-nav {
         justify-self: center;
         grid-column: 2;
     }

@@ -8,6 +8,8 @@ const overlay = document.getElementById('overlay');
 const keyboardsMenu = document.getElementById('keyboards-menu');
 const cancelIcon = document.getElementById('cancel-icon');
 const arrow = document.getElementById('arrow');
+const logoButtons = document.querySelectorAll('.logo-nav');
+const Modals = document.querySelectorAll('.modal');
 
 let originalSVG = `<svg width="15px" height="15px" viewBox="0 0 24 24" fill="none"
 xmlns="http://www.w3.org/2000/svg">
@@ -22,7 +24,13 @@ xmlns="http://www.w3.org/2000/svg">
 <path d="M 6.778 23.235 L 17.25 12.763 L 6.778 2.293" stroke="#000000" stroke-linecap="round" stroke-linejoin="round" style="stroke-width: 3px; transform-origin: 12.014px 12.764px;" transform="matrix(0, -1, 1, 0, 0, 0)"/>
 </svg>`;
 
-document.addEventListener('DOMContentLoaded',() => {
+logoButtons.forEach(Element => {
+    Element.addEventListener('click', () => {
+        window.location.href = 'index.html';
+    });
+})
+
+document.addEventListener('DOMContentLoaded', () => {
     function getScrollbarWidth() {
         // Create a block with scrolling
         let outer = document.createElement("div");
@@ -62,8 +70,8 @@ document.addEventListener('DOMContentLoaded',() => {
 
     document.getElementById('menu-icon').addEventListener('click', () => {
         const scrollbarWidth = getScrollbarWidth();
-        sidebar.classList.toggle('active');
-        overlay.classList.toggle('active');
+        sidebar.classList.add('active');
+        overlay.classList.add('active');
 
         if (sidebar.classList.contains('active')) {
             document.body.style.overflow = 'hidden';
@@ -77,20 +85,21 @@ document.addEventListener('DOMContentLoaded',() => {
         }
     });
 
-    function closeSidebarAndOverlay () {
-        overlay.classList.remove('active');
-        sidebar.classList.remove('active');
+    function closeModalAndOverlay() {
+        Modals.forEach(element => {
+            element.classList.remove('active');
+        })
 
         document.body.style.overflow = '';
         document.body.style.paddingRight = '';
         header.style.width = '100%';
     }
 
-    overlay.addEventListener('click', () => { closeSidebarAndOverlay(); });
-    cancelIcon.addEventListener('click', () => { closeSidebarAndOverlay(); });
+    overlay.addEventListener('click', () => { closeModalAndOverlay(); });
+    cancelIcon.addEventListener('click', () => { closeModalAndOverlay(); });
 
     keyboardsMenu.addEventListener('click', () => {
-        document.getElementById('sub-menu').classList.toggle('active');
+        document.getElementById('sub-menu').classList.add('active');
     });
 
     keyboardsMenu.addEventListener('click', function () {
