@@ -271,8 +271,19 @@ input[type="number"] {
 
 @media screen and (max-width: 660px) {
     .left-span, .right-span {
-    display: block; /* Заставляет span занимать всю ширину и переносит элементы друг под друга */
+    display: block;
+    }
 }
+
+@media screen and (max-width: 500px) {
+    #product-modal{
+        z-index: 10;
+        display: none;
+        top: 10%;
+        left: 50%;
+        transform: translate(-50%);
+        width: 400px;
+    }
 }
 
 @media screen and (max-width: 460px) {
