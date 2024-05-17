@@ -249,6 +249,11 @@ footer hr {
     margin: 0;
 }
 
+.logo-nav-side {
+    justify-self: center;
+    grid-column: 2;
+}
+
 @media screen and (max-width: 768px) {
     .content-wrapper, footer {
         flex-direction: column;

@@ -11,6 +11,11 @@ document.addEventListener('DOMContentLoaded', () => {
 
 document.getElementById('clear-cart-button').addEventListener('click', clearCart);
 
+document.getElementById('cancel-cart-icon').addEventListener('click', () => {
+    Modals.forEach(element => {
+        element.classList.remove('active');
+    })
+});
 
 function displayCartItems() {
     let cart = JSON.parse(localStorage.getItem('cart')) || [];

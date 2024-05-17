@@ -35,7 +35,7 @@
     z-index: 10;
 }
 
-#sidebar.active + #overlay {
+#sidebar.active+#overlay {
     display: block;
 }
 
@@ -109,7 +109,7 @@
     position: fixed;
 }
 
-#product-modal{
+#product-modal {
     z-index: 10;
     display: none;
     right: 10%;
@@ -117,7 +117,7 @@
     width: 400px;
 }
 
-#cart-modal{
+#cart-modal {
     z-index: 10;
     display: none;
     top: 10%;
@@ -126,7 +126,8 @@
     width: 708px;
 }
 
-#product-modal.active, #cart-modal.active{
+#product-modal.active,
+#cart-modal.active {
     display: block;
 }
 
@@ -254,13 +255,28 @@ input[type="number"] {
     -moz-appearance: textfield;
 }
 
-#minusButton, #plusButton {
+#minusButton,
+#plusButton {
     font-size: 16px;
     padding-inline: 12px;
 }
 
+.container-cart-name {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    align-items: start;
+    width: 100%;
+    position: relative;
+}
+
+.container-cart-name .right-span {
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+
 @media screen and (max-width: 900px) {
-    #cart-modal{
+    #cart-modal {
         z-index: 10;
         display: none;
         right: 10%;
@@ -270,13 +286,15 @@ input[type="number"] {
 }
 
 @media screen and (max-width: 660px) {
-    .left-span, .right-span {
-    display: block;
+
+    .left-span,
+    .right-span {
+        display: block;
     }
 }
 
 @media screen and (max-width: 500px) {
-    #product-modal{
+    #product-modal {
         z-index: 10;
         display: none;
         top: 10%;
@@ -287,7 +305,7 @@ input[type="number"] {
 }
 
 @media screen and (max-width: 460px) {
-    #cart-modal{
+    #cart-modal {
         z-index: 10;
         display: none;
         right: 10%;
